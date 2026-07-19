@@ -54,48 +54,56 @@ import random
 
 # rock peper scrissor
 
-import random
+# import random
 
-number=int(input("what do you choose? Type for Rock 0 for Pepar 1 or 2 for Scissor "))
-print(number)
-guess=None
-if number==0:
-    guess='rock'
-elif number==1:
-    guess='paper'
-elif number==2:
-    guess='scissor'
-else:
-    print("invalid choice")
+# number=int(input("what do you choose? Type for Rock 0 for Pepar 1 or 2 for Scissor "))
+# print(number)
+# guess=None
+# if number==0:
+#     guess='rock'
+# elif number==1:
+#     guess='paper'
+# elif number==2:
+#     guess='scissor'
+# else:
+#     print("invalid choice")
  
 
 
-list=["rock",'paper','scissor']
-computer_choice=random.choice(list)
-if guess == computer_choice:
-     print('match draw') 
-elif guess=='rock' and computer_choice=='scissor':
-    print('you win')
+# list=["rock",'paper','scissor']
+# computer_choice=random.choice(list)
+# if guess == computer_choice:
+#      print('match draw') 
+# elif guess=='rock' and computer_choice=='scissor':
+#     print('you win')
 
-elif guess=='scissor' and computer_choice=='paper':
-    print('you win')
+# elif guess=='scissor' and computer_choice=='paper':
+#     print('you win')
 
-elif guess=='paper' and computer_choice=='rock':
-    print('you win')
+# elif guess=='paper' and computer_choice=='rock':
+#     print('you win')
 
-elif computer_choice=='rock' and guess=='scissor':
-    print('computer win')
+# elif computer_choice=='rock' and guess=='scissor':
+#     print('computer win')
 
-elif computer_choice=='scissor' and guess=='paper':
-    print('computer win')
+# elif computer_choice=='scissor' and guess=='paper':
+#     print('computer win')
 
-elif computer_choice=='paper' and guess=='rock':
-    print('computer win')
-
-
+# elif computer_choice=='paper' and guess=='rock':
+#     print('computer win')
 
 
 
 
 
 
+# prime number
+
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, 'equals', x, '*', n//x)
+            break
+    else:
+        # loop fell through without finding a factor
+        print(n, 'is a prime number')
