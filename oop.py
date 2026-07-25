@@ -289,6 +289,198 @@
 
 # abstarcation
 
+# from abc import ABC,abstractclassmethod
+
+# class Vahicle(ABC):
+
+#     @abstractclassmethod
+#     def start():
+#         pass
+
+    
+#     @abstractclassmethod
+#     def stop():
+#         pass
+
+
+# class Bike(Vahicle):
+
+#     def start(self):
+#         print('bike is start')
+
+#     def stop(self):
+#         print('bike is stop')
+
+
+# class Car(Vahicle):
+
+#     def start(self):
+#         print('car is start')
+
+#     def stop(self):
+#         print('car is stop')
+
+# b=Bike()
+# b.start()
+# b.stop()
+
+# c=Car()
+# c.start()
+# c.stop()
+    
+
+
+
+# polymorphism
+
+# method overiding
+
+# class A:
+
+#     def display(self):
+#         print("a is calling")
+
+
+# class B(A):
+
+#     def display(self):
+#         print("b is calling")
+
+
+# obj=B()
+# obj.display()
+
+
+
+# method overloading
+
+
+# using default value
+# class add:
+
+#     def add_num(self,a=0,b=0):
+#         print(a+b)
+
+
+# obj=add()
+# obj.add_num()
+
+
+
+# using *args
+
+# class Add:
+
+#     def add_num(self,*args):
+
+#         print(sum(*args))
+
+
+# obj=Add()
+
+# obj.add_num((11,22,33))
+
+
+# using  **kwargs
+
+# class info:
+
+#     def detail(self,**kwargs):
+
+#         for i in kwargs:
+#             print(f"{i}:{kwargs[i]}")
+
+
+# obj=info()
+# obj.detail(name="ram",age=22,roll=103)
+
+
+
+# class Phone:
+#     def __init__(self,brnad_name,model_name,price):
+#         self.brand_name=brnad_name
+#         self.model_name=model_name
+#         self.price=price
+#     def full_details(self):
+#         return f"your Phone Details {self.brand_name} {self.model_name} {self.price}"
+
+# class SmartPhone(Phone):
+#     def __init__(self, brnad_name, model_name, price,cam):
+#         super().__init__(brnad_name, model_name, price)
+#         self.cam=cam
+#     def full_details(self):
+#         return f"your Phone Details {self.brand_name} {self.model_name} {self.price} {self.cam}"
+
+# class Flagship(SmartPhone):
+#     def __init__(self, brnad_name, model_name, price, cam,ram):
+#         super().__init__(brnad_name, model_name, price, cam)
+#         self.ram=ram
+        
+# F1=Flagship("Nokia",'3310',3000,'12mp','2gb')
+# S1=SmartPhone("Nokia",'3310',3000,'12mp')
+
+
+# print(isinstance(F1,Phone))
+# print(isinstance(S1,Flagship))
+    
+# print(issubclass(Flagship,SmartPhone))
+# print(issubclass(Phone,SmartPhone))
+
+
+# megic method and dunder method 
+
+# class Person:
+#     def __init__(self,fname,lname,age):
+#         self.fname=fname
+#         self.lname=lname
+#         self.age=age
+#     def __str__(self):
+#         return f"{self.fname} {self.lname} {self.age}"
+#     def __repr__(self):
+#         return f"{self.fname} {self.lname} {self.age}"
+
+# # lst=[1,2,4]
+# # print(lst)
+# P1=Person("Chirag","Joshi",90)
+# print(P1)
+
+
+
+class Person:
+    def __init__(self,fname,lname,age):
+        self.fname=fname
+        self.lname=lname
+        self.age=age
+    def __add__(self,other):
+        return self.age+other.age
+    def __eq__(self, other):
+        return self.age == other.age
+    
+    def __len__(self):
+        return len(self.fname)
+    
+
+    def __getitem__(self, index):
+        return self.fname[index]
+    
+    def __setitem__(self, value):
+        self.fname = value
+
+    def __str__(self):
+        return f"{self.fname} {self.lname} {self.age}"
+
+
+P1=Person("Chirag","Joshi",91)
+P2=Person("Chirag","Joshi",90)
+
+print(P1+P2)
+print(P1==P2)
+print(len(P1))
+print(P1[2])
+P1="test"
+print(P1)
+
+
 
 
 
