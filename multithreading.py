@@ -97,30 +97,91 @@
 
 
 # single tasking using thread
-from threading import Thread
-from time import sleep
+# from threading import Thread
+# from time import sleep
 
-class mythread:
+# class mythread:
 
-    def qusetion_solved(self):
-        self.q1()
-        self.q2()
-        self.q3()
-
-
-    def q1(self):
-        sleep(3)
-        print("qustion 1 is solved")
-
-    def q2(self):
-        sleep(3)
-        print("qustion 2 is solved")
+#     def qusetion_solved(self):
+#         self.q1()
+#         self.q2()
+#         self.q3()
 
 
-    def q3(self):
-        sleep(3)
-        print("qustion 3 is solved")
+#     def q1(self):
+#         sleep(3)
+#         print("qustion 1 is solved")
 
-my=mythread()
-t=Thread(target=my.qusetion_solved)
-t.start()
+#     def q2(self):
+#         sleep(3)
+#         print("qustion 2 is solved")
+
+
+#     def q3(self):
+#         sleep(3)
+#         print("qustion 3 is solved")
+
+# my=mythread()
+# t=Thread(target=my.qusetion_solved)
+# t.start()
+
+
+
+# multitasking
+# from threading import Thread,Lock
+
+# class myclass:
+#     lock=Lock()
+
+#     def __init__(self,l,):
+#         self.l=l
+        
+
+#     def disp(self):
+#         with myclass.lock:
+#             for i in range(5):
+#                 print(self.l,i)
+
+    
+
+# m1=myclass("waiter take the order")
+# m2=myclass("waiter serve the order")
+# t1=Thread(target=m1.disp)
+# t2=Thread(target=m2.disp)
+# t1.start()
+# t2.start()
+
+
+from threading import Thread,current_thread,Lock
+
+class Flight:
+
+    def __init__(self,available_seat):
+        self.available_seat=available_seat
+        self.l=Lock()
+
+    def reserve(self,need_seat):
+        
+        self.l.acquire()
+        print("available seat",self.available_seat)
+        if self.available_seat>=need_seat:
+            name=current_thread().name
+            print(f"{need_seat} seat is allcated for {name}")
+            self.available_seat-=need_seat
+        else:
+            print("Sorry all seats are allacated")
+        self.l.release()
+
+    
+m1=Flight(2)
+t1=Thread(target=m1.reserve,args=(1,),name="rahul")
+t2=Thread(target=m1.reserve,args=(1,),name="mohan")
+t3=Thread(target=m1.reserve,args=(1,),name="govind")
+t1.start()
+t2.start()
+t3.start()
+
+    
+
+
+
