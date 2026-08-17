@@ -211,7 +211,7 @@ conn=mysql.connector.connect(
     user='',
     password='',
     host='',
-    port='',
+    port='', 
     database='s1'
 )
 
