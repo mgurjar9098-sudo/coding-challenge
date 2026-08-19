@@ -64,6 +64,38 @@
 # print("total count is ",count)
 
 
+#  Write a Python program to count the occurrences of each word in a 
+# given sentence  
+
+# str='welcome to python and python to easy'
+# s=str.split()
+
+# freq={}
+# for w in s:
+#     freq[w]=freq.get(w,0)+1
+
+# print(freq)
+
+
+# Write a Python program to get a single string from two given strings, 
+# separated by a space and swap the first two characters of each string. 
+
+# f1="abc"
+# f2="xyz"
+
+# s1=f2[:2]+f1[2:]
+# s2=f1[:2]+f2[2:]
+# # print(s1)
+# # print(s2)
+
+# print(s1+" "+s2)
+
+
+
+
+
+
+    
 
 
 
