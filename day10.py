@@ -91,6 +91,21 @@
 # print(s1+" "+s2)
 
 
+# Write a Python program to add 'ing' at the end of a given string (length 
+# should be at least 3). If the given string already ends with 'ing' then add 
+# 'ly' instead if the string length of the given string is less than 3, leave it 
+# unchanged. 
+
+user_str=input("enter the string ")
+
+if len(user_str)<3:
+    print(user_str)
+elif user_str.endswith('ing'):
+    print(user_str + 'ly')
+else:
+    print(user_str+'ing')
+
+
 
 
 
